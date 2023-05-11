@@ -4,20 +4,17 @@
 [squareops_avatar]: https://squareops.com/wp-content/uploads/2022/12/squareops-logo.png
 
 ### [SquareOps Technologies](https://squareops.com/) Your DevOps Partner for Accelerating cloud journey.
-
-
 <br>
 
-Terraform module which creates EC2 key pair on AWS. The private key will be stored in AWS Systems Manager's Parameter Store.
+This module is a reusable Terraform module that simplifies the creation and management of an EC2 key pair on AWS. This module creates an EC2 key pair and securely stores the private key in the AWS Systems Manager Parameter Store (SSM). The module also returns the key pair name and the SSM parameter ARN for later use in other resources, making it easy to reference the key pair in other parts of your infrastructure. Using this module can help you save time and effort in managing your key pairs while ensuring security and compliance in your AWS environment.
 
 ## Usage Example
 
 ```hcl
 module "key_pair" {
   source = "squareops/keypair/aws"
-
-  environment        = "production"
   key_name           = "example-key"
+  environment        = "production"
   ssm_parameter_path = "production-example-key"
 }
 ```
@@ -28,12 +25,12 @@ Refer [this](https://github.com/squareops/terraform-aws-keypair/tree/main/exampl
 
 To Retrieve the Private key from SSM:
 ```bash
-aws ssm get-parameter --region=us-east-1 --name "production-example-key" --with-decryption --output text --query Parameter.Value
+aws ssm get-parameter --name "<ssm_parameter_path>" --region "<region>" --query Parameter.Value --output text
 ```
 
-Additionally, to save the private to a file:
+Additionally, to save the private key to a file:
 ```bash
-aws ssm get-parameter --region=us-east-1 --name "production-example-key" --with-decryption --output text --query Parameter.Value > private-key.pem
+aws ssm get-parameter --name "<ssm_parameter_path>" --region "<region>" --with-decryption --query Parameter.Value --output text > keypair.pem
 ```
 
 ## IAM Permission
@@ -71,16 +68,16 @@ The required IAM permissions to create resources from this module can be found [
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_environment"></a> [environment](#input\_environment) | Environment identifier for the key pair | `string` | `""` | no |
-| <a name="input_key_name"></a> [key\_name](#input\_key\_name) | The name for the key pair to be generated | `string` | `""` | no |
-| <a name="input_ssm_parameter_path"></a> [ssm\_parameter\_path](#input\_ssm\_parameter\_path) | The name of the ssm parameter for storing the keypair | `string` | `"/example/ssm"` | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | Specifies the identifier for the environment where the key pair will be used. | `string` | `""` | no |
+| <a name="input_key_name"></a> [key\_name](#input\_key\_name) | Specifies the name to be assigned to the key pair that will be generated. | `string` | `""` | no |
+| <a name="input_ssm_parameter_path"></a> [ssm\_parameter\_path](#input\_ssm\_parameter\_path) | Specifies the SSM parameter name that will be used to store the generated key pair. | `string` | `"/example/ssm"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_key_pair_name"></a> [key\_pair\_name](#output\_key\_pair\_name) | The key pair name. |
-| <a name="output_ssm_parameter_arn"></a> [ssm\_parameter\_arn](#output\_ssm\_parameter\_arn) | The SSM parameter ARN of key pair. |
+| <a name="output_key_pair_name"></a> [key\_pair\_name](#output\_key\_pair\_name) | The name of the key pair generated for the EC2 instance. |
+| <a name="output_ssm_parameter_arn"></a> [ssm\_parameter\_arn](#output\_ssm\_parameter\_arn) | The Amazon Resource Name (ARN) of the SSM parameter used to store the EC2 instance key pair. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Contribution & Issue Reporting
