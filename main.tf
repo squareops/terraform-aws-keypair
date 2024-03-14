@@ -2,7 +2,7 @@ module "key_pair" {
   source             = "terraform-aws-modules/key-pair/aws"
   version            = "2.0.0"
   key_name           = var.key_name
-  create_private_key = true
+  create_private_key = var.create_private_key
 }
 
 
