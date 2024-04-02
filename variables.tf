@@ -10,7 +10,7 @@ variable "aws_region" {
   type        = string
 }
 
-variable "key_name" {
+variable "key_pair_name" {
   description = "Specifies the name to be assigned to the key pair that will be generated."
   default     = ""
   type        = string
