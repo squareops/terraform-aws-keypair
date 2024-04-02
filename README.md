@@ -68,12 +68,13 @@ The required IAM permissions to create resources from this module can be found [
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_additional_tags"></a> [additional\_tags](#input\_additional\_tags) | Additional tags to be applied to AWS resources | `map(string)` | `{}` | no |
+| <a name="input_additional_tags"></a> [additional\_tags](#input\_additional\_tags) | Additional tags to be applied to AWS resources. | `map(string)` | `{}` | no |
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | Name of the AWS region where S3 bucket is to be created. | `string` | `"us-east-1"` | no |
 | <a name="input_create_private_key"></a> [create\_private\_key](#input\_create\_private\_key) | Whether to create the private key or not. | `bool` | `true` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Specifies the identifier for the environment where the key pair will be used. | `string` | `""` | no |
 | <a name="input_key_pair_name"></a> [key\_pair\_name](#input\_key\_pair\_name) | Specifies the name to be assigned to the key pair that will be generated. | `string` | `""` | no |
 | <a name="input_ssm_parameter_path"></a> [ssm\_parameter\_path](#input\_ssm\_parameter\_path) | Specifies the SSM parameter name that will be used to store the generated key pair. | `string` | `"/example/ssm"` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to be applied to AWS resources. | `map(string)` | <pre>{<br>  "Environment": "",<br>  "Name": ""<br>}</pre> | no |
 
 ## Outputs
 

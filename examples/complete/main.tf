@@ -1,7 +1,11 @@
 locals {
   name        = "key"
-  region      = "us-east-2"
+  aws_region  = "us-east-2"
   environment = "prod"
+  tags = {
+    Environment = "stg"
+    Name        = "key_pair"
+  }
   additional_tags = {
     Owner      = "organization_name"
     Expires    = "Never"
