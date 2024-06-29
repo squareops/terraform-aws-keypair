@@ -1,3 +1,4 @@
+# Local Variables declaration
 locals {
   name        = "key"
   region      = "us-east-2"
@@ -9,6 +10,7 @@ locals {
   }
 }
 
+# Using "squareops/keypair/aws" module to generate an EC2 key pair and storing it in ssm parameter store.
 module "key_pair" {
   source             = "squareops/keypair/aws"
   key_name           = format("%s-%s-kp", local.environment, local.name)
