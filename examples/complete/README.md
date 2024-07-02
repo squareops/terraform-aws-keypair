@@ -21,8 +21,8 @@ Note that this example may create resources which cost money. Run `terraform des
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.21 |
-| <a name="requirement_tls"></a> [tls](#requirement\_tls) | >= 3.4 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.0.0 |
+| <a name="requirement_tls"></a> [tls](#requirement\_tls) | >= 4.0.3 |
 
 ## Providers
 
@@ -32,7 +32,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_key_pair"></a> [key\_pair](#module\_key\_pair) | squareops/keypair/aws | n/a |
+| <a name="module_key_pair"></a> [key\_pair](#module\_key\_pair) | ../../ | n/a |
 
 ## Resources
 
