@@ -45,20 +45,20 @@ The required IAM permissions to create resources from this module can be found [
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.0.0 |
-| <a name="requirement_tls"></a> [tls](#requirement\_tls) | >= 4.0.3 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.21 |
+| <a name="requirement_tls"></a> [tls](#requirement\_tls) | >= 3.4 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.0.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.21 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_key_pair"></a> [key\_pair](#module\_key\_pair) | terraform-aws-modules/key-pair/aws | 2.0.0 |
+| <a name="module_key_pair"></a> [key\_pair](#module\_key\_pair) | terraform-aws-modules/key-pair/aws | 2.0.3 |
 
 ## Resources
 
@@ -76,7 +76,7 @@ The required IAM permissions to create resources from this module can be found [
 | <a name="input_environment"></a> [environment](#input\_environment) | Specifies the identifier for the environment where the key pair will be used. | `string` | `""` | no |
 | <a name="input_key_pair_name"></a> [key\_pair\_name](#input\_key\_pair\_name) | Specifies the name to be assigned to the key pair that will be generated. | `string` | `""` | no |
 | <a name="input_ssm_parameter_path"></a> [ssm\_parameter\_path](#input\_ssm\_parameter\_path) | Specifies the SSM parameter name that will be used to store the generated key pair. | `string` | `"/example/ssm"` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | Tags to be applied to AWS resources. | `map(string)` | <pre>{<br>  "Environment": "",<br>  "Name": ""<br>}</pre> | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to be applied to AWS resources. | `map(string)` | <pre>{<br>  "Environment": "",<br>  "Name": "",<br>  "cost": ""<br>}</pre> | no |
 
 ## Outputs
 
