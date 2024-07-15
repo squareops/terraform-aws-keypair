@@ -10,6 +10,7 @@ variable "tags" {
   default = {
     Environment = ""
     Name        = ""
+    cost        = ""
   }
 }
 
