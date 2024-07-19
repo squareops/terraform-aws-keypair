@@ -1,7 +1,9 @@
 # AWS EC2 Keypair
-![squareops_avatar]
-
-[squareops_avatar]: https://squareops.com/wp-content/uploads/2022/12/squareops-logo.png
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://squareops.com/wp-content/uploads/2020/05/Squareops-png-white.png1-3.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://squareops.com/wp-content/uploads/2021/09/Squareops-png-1-1.png">
+  <img src="https://squareops.com/wp-content/uploads/2021/09/Squareops-png-1-1.png">
+</picture>
 
 ### [SquareOps Technologies](https://squareops.com/) Your DevOps Partner for Accelerating cloud journey.
 <br>
@@ -56,7 +58,7 @@ The required IAM permissions to create resources from this module can be found [
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_key_pair"></a> [key\_pair](#module\_key\_pair) | terraform-aws-modules/key-pair/aws | 2.0.0 |
+| <a name="module_key_pair"></a> [key\_pair](#module\_key\_pair) | terraform-aws-modules/key-pair/aws | 2.0.3 |
 
 ## Resources
 
@@ -68,9 +70,13 @@ The required IAM permissions to create resources from this module can be found [
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_additional_aws_tags"></a> [additional\_aws\_tags](#input\_additional\_aws\_tags) | Additional tags to be applied to AWS resources. | `map(string)` | `{}` | no |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | Name of the AWS region where S3 bucket is to be created. | `string` | `"us-east-1"` | no |
+| <a name="input_create_private_key"></a> [create\_private\_key](#input\_create\_private\_key) | Whether to create the private key or not. | `bool` | `true` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Specifies the identifier for the environment where the key pair will be used. | `string` | `""` | no |
-| <a name="input_key_name"></a> [key\_name](#input\_key\_name) | Specifies the name to be assigned to the key pair that will be generated. | `string` | `""` | no |
+| <a name="input_key_pair_name"></a> [key\_pair\_name](#input\_key\_pair\_name) | Specifies the name to be assigned to the key pair that will be generated. | `string` | `""` | no |
 | <a name="input_ssm_parameter_path"></a> [ssm\_parameter\_path](#input\_ssm\_parameter\_path) | Specifies the SSM parameter name that will be used to store the generated key pair. | `string` | `"/example/ssm"` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to be applied to AWS resources. | `map(string)` | <pre>{<br>  "Environment": "",<br>  "Name": "",<br>  "cost": ""<br>}</pre> | no |
 
 ## Outputs
 
