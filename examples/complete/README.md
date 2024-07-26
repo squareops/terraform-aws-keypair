@@ -32,7 +32,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_key_pair"></a> [key\_pair](#module\_key\_pair) | ../../ | n/a |
+| <a name="module_key_pair"></a> [key\_pair](#module\_key\_pair) | squareops/keypair/aws | 1.0.3 |
 
 ## Resources
 
